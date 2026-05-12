@@ -7,15 +7,15 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Supriya114/devops-lab-app.git'
-            }
-        }
-
         stage('Install') {
             steps {
                 sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
             }
         }
 
@@ -27,16 +27,12 @@ pipeline {
 
         stage('Run') {
             steps {
-                sh 'nohup npm start &'
+                sh 'node app.js'
             }
         }
     }
 
     post {
-        success {
-            echo 'Pipeline Success!'
-        }
-
         failure {
             echo 'Pipeline Failed!'
         }
