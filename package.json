@@ -1,0 +1,25 @@
+{
+  "name": "devops-lab-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
+  "scripts": {
+  "start": "node app.js",
+  "test": "echo Test Passed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Supriya114/devops-lab-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Supriya114/devops-lab-app/issues"
+  },
+  "homepage": "https://github.com/Supriya114/devops-lab-app#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
