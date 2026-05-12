@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git'
+                git 'https://github.com/Supriya114/devops-lab-app.git'
             }
         }
 
