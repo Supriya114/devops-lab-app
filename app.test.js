@@ -5,6 +5,6 @@ describe('GET /', () => {
     it('should return Hello World', async () => {
         const res = await request(app).get('/');
         expect(res.statusCode).toBe(200);
-        expect(res.text).toBe('CI/CD Pipeline Working Successfully!');
+        expect(res.text).toBe('Webhook Trigger Working Successfully!');
     });
 });
