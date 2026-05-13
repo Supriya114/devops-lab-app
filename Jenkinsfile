@@ -31,6 +31,12 @@ pipeline {
                 sh 'npm test'
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh 'sudo docker build -t devops-lab-app .'
+            }
+        }
     }
 
     post {
