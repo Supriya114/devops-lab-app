@@ -34,7 +34,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'sudo docker build -t devops-lab-app .'
+                sh 'docker build -t devops-lab-app .'
             }
         }
     }
