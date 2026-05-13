@@ -28,6 +28,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh 'echo $APP_NAME'
                 sh 'npm run build'
             }
         }
@@ -59,6 +60,7 @@ pipeline {
     }
 
     post {
+
         success {
             echo 'Pipeline Successful!'
         }
@@ -66,5 +68,6 @@ pipeline {
         failure {
             echo 'Pipeline Failed!'
         }
+
     }
 }
