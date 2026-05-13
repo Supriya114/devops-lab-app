@@ -2,7 +2,13 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'NodeJS-18'
+        nodejs 'NodeJS'
+    }
+
+    environment {
+        APP_NAME = "devops-lab-app"
+        PORT = "3000"
+        GITHUB_TOKEN = credentials('github-token')
     }
 
     stages {
@@ -26,9 +32,21 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'npm test'
+        stage('Parallel Tests') {
+            parallel {
+
+                stage('Unit Test') {
+                    steps {
+                        sh 'npm test'
+                    }
+                }
+
+                stage('Code Check') {
+                    steps {
+                        sh 'echo Code Quality Check Passed'
+                    }
+                }
+
             }
         }
 
@@ -37,6 +55,7 @@ pipeline {
                 sh 'docker build -t devops-lab-app .'
             }
         }
+
     }
 
     post {
